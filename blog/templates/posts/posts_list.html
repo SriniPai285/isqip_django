@@ -1,7 +1,11 @@
 {% extends 'posts/base.html' %}
 {% block content %}
 {% for post in posts %}
-<h1> {{ post.title }} </h1>
+
+<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+{% if post.image %}
+<img src="http://localhost:8000/{{post.image.url}}" alt="my image">
+{% endif %}
 <p> {{ post.description }} </p>
 <p>HashTags :
 {% for category in post.categories.all %}

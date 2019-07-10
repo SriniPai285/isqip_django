@@ -22,6 +22,7 @@ class Post(TimeStampMode):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="posts", on_delete=models.CASCADE)
     is_active = models.BooleanField(default=True)
     categories = models.ManyToManyField(Category, related_name="posts")
+    image = models.FileField(upload_to="posts/", null=True)
 
     def __str__(self):
         return self.title
