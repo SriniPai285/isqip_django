@@ -120,3 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = 'media/'
+STATIC_ROOT = "static_root"
